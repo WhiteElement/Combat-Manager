@@ -8,4 +8,4 @@ C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat-Man
 C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat-Manager.csproj.CoreCompileInputs.cache
 C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.exe
 C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.pdb
-C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.Form1.resources
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.MainWindow.resources
