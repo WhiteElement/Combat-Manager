@@ -1,0 +1,11 @@
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\bin\Debug\Combat_Manager.exe.config
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\bin\Debug\Combat_Manager.exe
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\bin\Debug\Combat_Manager.pdb
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat-Manager.csproj.AssemblyReference.cache
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat-Manager.csproj.SuggestedBindingRedirects.cache
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.Properties.Resources.resources
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat-Manager.csproj.GenerateResource.cache
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat-Manager.csproj.CoreCompileInputs.cache
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.exe
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.pdb
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.Form1.resources
