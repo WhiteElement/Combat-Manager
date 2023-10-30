@@ -3,5 +3,6 @@
     public class NPC : Entity
     {
         public int HitPoints { get; set; }
+        public string Comment { get; set; }
     }
 }

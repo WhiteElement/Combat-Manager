@@ -4,10 +4,8 @@
     {
         public int Initiative { get; set; }
         public string Name { get; set; }
-        public int Parry { get; set; }
+        public int? Parry { get; set; }
 
 
-        //NPC
-        // description
     }
 }
