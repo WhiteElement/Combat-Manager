@@ -29,20 +29,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCombatSelection = new System.Windows.Forms.Button();
             this.buttonNpc = new System.Windows.Forms.Button();
             this.buttonPlayer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonCombatSelection
             // 
-            this.button1.Location = new System.Drawing.Point(308, 120);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start Fight\r\n";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCombatSelection.Location = new System.Drawing.Point(308, 120);
+            this.buttonCombatSelection.Name = "buttonCombatSelection";
+            this.buttonCombatSelection.Size = new System.Drawing.Size(167, 42);
+            this.buttonCombatSelection.TabIndex = 0;
+            this.buttonCombatSelection.Text = "Kampf";
+            this.buttonCombatSelection.UseVisualStyleBackColor = true;
+            this.buttonCombatSelection.Click += new System.EventHandler(this.buttonCombatSelection_Click);
             // 
             // buttonNpc
             // 
@@ -71,7 +71,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonPlayer);
             this.Controls.Add(this.buttonNpc);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCombatSelection);
             this.Name = "MainWindow";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -80,7 +80,7 @@
         private System.Windows.Forms.Button buttonNpc;
         private System.Windows.Forms.Button buttonPlayer;
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCombatSelection;
 
         #endregion
     }

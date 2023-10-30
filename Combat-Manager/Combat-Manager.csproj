@@ -55,6 +55,7 @@
         <Compile Include="Models\Player.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Services\CombatService.cs" />
         <Compile Include="Services\NpcService.cs" />
         <Compile Include="Services\PlayerService.cs" />
         <Compile Include="TurnMessageBox.cs">
@@ -62,6 +63,18 @@
         </Compile>
         <Compile Include="TurnMessageBox.Designer.cs">
           <DependentUpon>TurnMessageBox.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Windows\CombatSelectionWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\CombatSelectionWindow.Designer.cs">
+          <DependentUpon>CombatSelectionWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Windows\CombatWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\CombatWindow.Designer.cs">
+          <DependentUpon>CombatWindow.cs</DependentUpon>
         </Compile>
         <Compile Include="Windows\MainWindow.cs">
           <SubType>Form</SubType>
@@ -90,6 +103,9 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="Windows\CombatSelectionWindow.resx">
+          <DependentUpon>CombatSelectionWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Windows\MainWindow.resx">
           <DependentUpon>MainWindow.cs</DependentUpon>
         </EmbeddedResource>
