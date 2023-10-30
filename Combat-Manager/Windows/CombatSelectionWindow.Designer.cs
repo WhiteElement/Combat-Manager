@@ -32,6 +32,8 @@ namespace Combat_Manager
         private void InitializeComponent()
         {
             this.playerBox = new System.Windows.Forms.CheckedListBox();
+            this.npcBox = new System.Windows.Forms.CheckedListBox();
+            this.buttonStartCombat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // playerBox
@@ -42,16 +44,40 @@ namespace Combat_Manager
             this.playerBox.Size = new System.Drawing.Size(256, 304);
             this.playerBox.TabIndex = 0;
             // 
+            // npcBox
+            // 
+            this.npcBox.FormattingEnabled = true;
+            this.npcBox.Location = new System.Drawing.Point(490, 61);
+            this.npcBox.Name = "npcBox";
+            this.npcBox.Size = new System.Drawing.Size(256, 304);
+            this.npcBox.TabIndex = 1;
+            // 
+            // buttonStartCombat
+            // 
+            this.buttonStartCombat.Location = new System.Drawing.Point(326, 380);
+            this.buttonStartCombat.Name = "buttonStartCombat";
+            this.buttonStartCombat.Size = new System.Drawing.Size(132, 40);
+            this.buttonStartCombat.TabIndex = 2;
+            this.buttonStartCombat.Text = "Start";
+            this.buttonStartCombat.UseVisualStyleBackColor = true;
+            this.buttonStartCombat.Click += new System.EventHandler(this.buttonStartCombat_Click);
+            // 
             // CombatSelectionWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonStartCombat);
+            this.Controls.Add(this.npcBox);
             this.Controls.Add(this.playerBox);
             this.Name = "CombatSelectionWindow";
             this.Text = "CombatSelectionWindow";
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button buttonStartCombat;
+
+        private System.Windows.Forms.CheckedListBox npcBox;
 
         private System.Windows.Forms.CheckedListBox playerBox;
 

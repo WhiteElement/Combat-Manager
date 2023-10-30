@@ -70,6 +70,12 @@
         <Compile Include="Windows\CombatSelectionWindow.Designer.cs">
           <DependentUpon>CombatSelectionWindow.cs</DependentUpon>
         </Compile>
+        <Compile Include="Windows\CombatWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\CombatWindow.Designer.cs">
+          <DependentUpon>CombatWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\MainWindow.cs">
           <SubType>Form</SubType>
         </Compile>
