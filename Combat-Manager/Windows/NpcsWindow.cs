@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using Combat_Manager.Helper;
 using Combat_Manager.Models;
+using Combat_Manager.Services;
 using Newtonsoft.Json;
 
 namespace Combat_Manager
 {
     public partial class NpcsWindow : Form
     {
-        private string _npcFilePath = Environment.CurrentDirectory.Substring(0, 
-                                     Environment.CurrentDirectory.IndexOf("bin")) + "resources\\npcs.json";
+        private readonly NpcService _npcService;
         
         public NpcsWindow()
         {
+            _npcService = new NpcService();
             InitializeComponent();
             PopulateTreeView();
         }
@@ -35,35 +37,23 @@ namespace Combat_Manager
             }
             catch
             {
-                MustFieldNotEntered();
+                FormHelper.MustFieldNotEntered();
                 return;
             }
             
-            var npcs = LoadNpcsFromFile();
-
+            var npcs = _npcService.LoadNpcsFromFile();
             npcs.Add(newNpc);
-            string json = JsonConvert.SerializeObject(npcs);
             
-            File.WriteAllText(_npcFilePath,json);
+            string json = JsonConvert.SerializeObject(npcs);
+
+            _npcService.WriteNpcsToFile(json);
             
             PopulateTreeView();
-        }
-
-        private List<NPC> LoadNpcsFromFile()
-        {
-            string json = File.ReadAllText(_npcFilePath);
-            List<NPC> npcs = JsonConvert.DeserializeObject<List<NPC>>(json) ?? new List<NPC>();
-            return npcs;
-        }
-
-        private void MustFieldNotEntered()
-        {
-            MessageBox.Show("Mussfeld ist nicht ausgefüllt");
         }
         
         private void PopulateTreeView()
         {
-            var npcs = LoadNpcsFromFile();
+            var npcs = _npcService.LoadNpcsFromFile();
 
             foreach (var npc in npcs)
             {
