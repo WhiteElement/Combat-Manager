@@ -14,3 +14,4 @@ C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\bin\Debug\Newtonsoft
 C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\bin\Debug\Newtonsoft.Json.xml
 C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat-Manager.csproj.CopyComplete
 C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.PlayersWindow.resources
+C:\Entwicklung\Combat-Manager\Combat-Manager\Combat-Manager\obj\Debug\Combat_Manager.CombatSelectionWindow.resources
