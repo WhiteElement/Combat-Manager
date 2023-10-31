@@ -73,7 +73,7 @@
             this.Controls.Add(this.buttonNpc);
             this.Controls.Add(this.buttonCombatSelection);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "PnP Combat-Manager";
             this.ResumeLayout(false);
         }
 

@@ -44,13 +44,16 @@ namespace Combat_Manager
             this.commentBox = new System.Windows.Forms.TextBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.attackBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // newNpcButton
             // 
-            this.newNpcButton.Location = new System.Drawing.Point(14, 225);
+            this.newNpcButton.Location = new System.Drawing.Point(14, 257);
             this.newNpcButton.Name = "newNpcButton";
             this.newNpcButton.Size = new System.Drawing.Size(130, 32);
             this.newNpcButton.TabIndex = 0;
@@ -71,11 +74,11 @@ namespace Combat_Manager
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Name";
+            this.label1.Text = "Name *";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(18, 63);
+            this.label2.Location = new System.Drawing.Point(18, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 15);
             this.label2.TabIndex = 4;
@@ -83,14 +86,14 @@ namespace Combat_Manager
             // 
             // hpBox
             // 
-            this.hpBox.Location = new System.Drawing.Point(14, 78);
+            this.hpBox.Location = new System.Drawing.Point(14, 193);
             this.hpBox.Name = "hpBox";
             this.hpBox.Size = new System.Drawing.Size(147, 20);
             this.hpBox.TabIndex = 3;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(18, 101);
+            this.label3.Location = new System.Drawing.Point(18, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 15);
             this.label3.TabIndex = 6;
@@ -98,29 +101,29 @@ namespace Combat_Manager
             // 
             // parryBox
             // 
-            this.parryBox.Location = new System.Drawing.Point(14, 116);
+            this.parryBox.Location = new System.Drawing.Point(14, 155);
             this.parryBox.Name = "parryBox";
             this.parryBox.Size = new System.Drawing.Size(147, 20);
             this.parryBox.TabIndex = 5;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(18, 139);
+            this.label4.Location = new System.Drawing.Point(18, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 15);
+            this.label4.Size = new System.Drawing.Size(53, 15);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Initiative";
+            this.label4.Text = "Initiative *";
             // 
             // initiativeBox
             // 
-            this.initiativeBox.Location = new System.Drawing.Point(14, 154);
+            this.initiativeBox.Location = new System.Drawing.Point(14, 78);
             this.initiativeBox.Name = "initiativeBox";
             this.initiativeBox.Size = new System.Drawing.Size(147, 20);
             this.initiativeBox.TabIndex = 7;
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(18, 177);
+            this.label5.Location = new System.Drawing.Point(18, 216);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 15);
             this.label5.TabIndex = 10;
@@ -128,7 +131,7 @@ namespace Combat_Manager
             // 
             // commentBox
             // 
-            this.commentBox.Location = new System.Drawing.Point(14, 192);
+            this.commentBox.Location = new System.Drawing.Point(14, 231);
             this.commentBox.Name = "commentBox";
             this.commentBox.Size = new System.Drawing.Size(262, 20);
             this.commentBox.TabIndex = 9;
@@ -142,6 +145,9 @@ namespace Combat_Manager
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.attackBox);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.commentBox);
             this.groupBox1.Controls.Add(this.newNpcButton);
@@ -153,12 +159,36 @@ namespace Combat_Manager
             this.groupBox1.Controls.Add(this.hpBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.nameBox);
-            this.groupBox1.Location = new System.Drawing.Point(27, 165);
+            this.groupBox1.Location = new System.Drawing.Point(27, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(287, 273);
+            this.groupBox1.Size = new System.Drawing.Size(287, 344);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "neuer NPC";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(211, 329);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 12);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "* = Plfichtfeld";
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(18, 102);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 15);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Attacke";
+            // 
+            // attackBox
+            // 
+            this.attackBox.Location = new System.Drawing.Point(14, 117);
+            this.attackBox.Name = "attackBox";
+            this.attackBox.Size = new System.Drawing.Size(147, 20);
+            this.attackBox.TabIndex = 11;
             // 
             // label6
             // 
@@ -178,11 +208,16 @@ namespace Combat_Manager
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.treeView1);
             this.Name = "NpcsWindow";
-            this.Text = "NpcsWindow";
+            this.Text = "PnP Combat-Manager";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label8;
+
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox attackBox;
 
         private System.Windows.Forms.Label label6;
 

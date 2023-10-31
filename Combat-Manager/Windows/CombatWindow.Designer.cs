@@ -58,7 +58,7 @@ namespace Combat_Manager
             // 
             this.treeViewNpcs.Location = new System.Drawing.Point(457, 26);
             this.treeViewNpcs.Name = "treeViewNpcs";
-            this.treeViewNpcs.Size = new System.Drawing.Size(117, 216);
+            this.treeViewNpcs.Size = new System.Drawing.Size(215, 216);
             this.treeViewNpcs.TabIndex = 2;
             // 
             // label1
@@ -91,7 +91,7 @@ namespace Combat_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 761);
+            this.ClientSize = new System.Drawing.Size(684, 761);
             this.Controls.Add(this.buttonStartContinueCombat);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -99,7 +99,7 @@ namespace Combat_Manager
             this.Controls.Add(this.treeViewPlayer);
             this.Controls.Add(this.listBox1);
             this.Name = "CombatWindow";
-            this.Text = "CombatWindow";
+            this.Text = "PnP Combat-Manager";
             this.Shown += new System.EventHandler(this.CombatWindow_Shown);
             this.ResumeLayout(false);
         }
