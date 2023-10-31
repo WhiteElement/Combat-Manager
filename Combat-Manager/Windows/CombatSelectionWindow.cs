@@ -67,5 +67,6 @@ namespace Combat_Manager
 
             new CombatWindow(Players, NPCs).Show();
         }
+
     }
 }
