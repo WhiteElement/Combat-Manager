@@ -11,19 +11,43 @@ namespace Combat_Manager.Helper
             MessageBox.Show("Mussfeld ist nicht ausgefüllt");
         }
 
-        public static void PopulateTreeView(TreeView treeView, List<Entity> entities, bool expand)
+        public static void PopulateTreeView(TreeView treeView, List<NPC> npcs, bool expand)
         {
             treeView.Nodes.Clear();
             
-            foreach (var entity in entities)
+            foreach (var npc in npcs)
             {
                 TreeNode node = new TreeNode();
-                node.Text = entity.Name;
+                node.Text = npc.Name;
                 
-                node.Nodes.Add(new TreeNode($"Initiative: {entity.Initiative}"));
-                // node.Nodes.Add(new TreeNode($"Parade: {entity.Parry}"));
-                // node.Nodes.Add(new TreeNode($"HP: {entity.HitPoints}"));
-                // node.Nodes.Add(new TreeNode($"Kommentar: {entity.Comment}"));
+                node.Nodes.Add(new TreeNode($"Initiative: {npc.Initiative}"));
+
+                if (npc.Attack != null)
+                    node.Nodes.Add(new TreeNode($"Attacke: {npc.Attack}"));
+                if (npc.HitPoints != null)
+                    node.Nodes.Add(new TreeNode($"HP: {npc.HitPoints}"));
+                if (npc.Parry != null)
+                    node.Nodes.Add(new TreeNode($"Parade: {npc.Parry}"));
+                if (!string.IsNullOrEmpty(npc.Comment))
+                    node.Nodes.Add(new TreeNode($"Kommentar: {npc.Comment}"));
+                
+                treeView.Nodes.Add(node);
+            }
+            
+            if(expand)
+                treeView.ExpandAll();
+        }
+        
+        public static void PopulateTreeView(TreeView treeView, List<Player> players, bool expand)
+        {
+            treeView.Nodes.Clear();
+            
+            foreach (var player in players)
+            {
+                TreeNode node = new TreeNode();
+                node.Text = player.Name;
+                
+                node.Nodes.Add(new TreeNode($"Initiative: {player.Initiative}"));
                 
                 treeView.Nodes.Add(node);
     

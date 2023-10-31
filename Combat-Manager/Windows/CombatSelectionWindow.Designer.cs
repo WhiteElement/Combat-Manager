@@ -62,7 +62,7 @@ namespace Combat_Manager
             this.buttonStartCombat.UseVisualStyleBackColor = true;
             this.buttonStartCombat.Click += new System.EventHandler(this.buttonStartCombat_Click);
             // 
-            // CombatSelectionWindow
+            // PnP Combat-Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,8 +70,8 @@ namespace Combat_Manager
             this.Controls.Add(this.buttonStartCombat);
             this.Controls.Add(this.npcBox);
             this.Controls.Add(this.playerBox);
-            this.Name = "CombatSelectionWindow";
-            this.Text = "CombatSelectionWindow";
+            this.Name = "PnP Combat-Manager";
+            this.Text = "PnP Combat-Manager";
             this.ResumeLayout(false);
         }
 

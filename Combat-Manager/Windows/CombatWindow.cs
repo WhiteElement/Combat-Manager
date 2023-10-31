@@ -9,12 +9,12 @@ namespace Combat_Manager
 {
     public partial class CombatWindow : Form
     {
-        private List<Entity> _players;
-        private List<Entity> _npcs;
+        private List<Player> _players;
+        private List<NPC> _npcs;
         private int _globalInitiative = 0;
         private List<Entity> _hadHisTurn = new List<Entity>();
         
-        public CombatWindow(List<Entity> players, List<Entity> npcs)
+        public CombatWindow(List<Player> players, List<NPC> npcs)
         {
 
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace Combat_Manager
                         && !_hadHisTurn.Contains(entity))
                     {
                         Thread.Sleep(50);
-                        listBox1.Items.Add($"\t{entity.Name}(Ini: {entity.Initiative}) ist am Zug");
+                        listBox1.Items.Add($"\t> {entity.Name} ist am Zug (Ini: {entity.Initiative})");
                         listBox1.Refresh();
                         listBox1.TopIndex = listBox1.Items.Count - 1;
                         

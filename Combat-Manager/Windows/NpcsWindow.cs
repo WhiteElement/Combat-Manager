@@ -16,8 +16,7 @@ namespace Combat_Manager
         {
             _npcService = new NpcService();
             InitializeComponent();
-            List<Entity> npcs = new List<Entity>(_npcService.LoadNpcsFromFile());
-            FormHelper.PopulateTreeView(treeView1,new List<Entity>(npcs),true);
+            FormHelper.PopulateTreeView(treeView1,_npcService.LoadNpcsFromFile(),true);
         }
         
 
@@ -29,10 +28,7 @@ namespace Combat_Manager
                 newNpc = new NPC()
                 {
                     Name = nameBox.Text,
-                    Initiative = Int32.Parse(initiativeBox.Text),
-                    Parry = Int32.Parse(parryBox.Text),
-                    HitPoints = Int32.Parse(hpBox.Text),
-                    Comment = commentBox.Text
+                    Initiative = Int32.Parse(initiativeBox.Text)
                 };
             }
             catch
@@ -40,6 +36,11 @@ namespace Combat_Manager
                 FormHelper.MustFieldNotEntered();
                 return;
             }
+
+            newNpc.Parry = SetOrDefault(parryBox);
+            newNpc.Attack = SetOrDefault(attackBox);
+            newNpc.HitPoints = SetOrDefault(hpBox);
+            newNpc.Comment = commentBox.Text;
             
             var npcs = _npcService.LoadNpcsFromFile();
             npcs.Add(newNpc);
@@ -48,7 +49,18 @@ namespace Combat_Manager
 
             _npcService.WriteNpcsToFile(json);
             
-            FormHelper.PopulateTreeView(treeView1,new List<Entity>(npcs),true);
+            FormHelper.PopulateTreeView(treeView1, npcs, true);
         }
+
+        private int? SetOrDefault(TextBox textBox)
+        {
+            int result;
+
+            if (Int32.TryParse(textBox.Text, out result))
+                return result;
+
+            return null;
+        }
+        
     }
 }
