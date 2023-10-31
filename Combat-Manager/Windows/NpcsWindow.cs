@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Windows.Forms;
 using Combat_Manager.Helper;
 using Combat_Manager.Models;
@@ -51,14 +50,5 @@ namespace Combat_Manager
             
             FormHelper.PopulateTreeView(treeView1,new List<Entity>(npcs),true);
         }
-        
-        // private void PopulateTreeView()
-        // {
-        //     var npcs = _npcService.LoadNpcsFromFile();
-        //
-        //     
-        //     
-        // }
-
     }
 }

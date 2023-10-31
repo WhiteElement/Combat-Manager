@@ -4,56 +4,50 @@ using System.Threading;
 using System.Windows.Forms;
 using Combat_Manager.Helper;
 using Combat_Manager.Models;
-using Combat_Manager.Services;
 
 namespace Combat_Manager
 {
     public partial class CombatWindow : Form
     {
-        private readonly CombatService _combatService;
         private List<Entity> _players;
         private List<Entity> _npcs;
+        private int _globalInitiative = 0;
+        private List<Entity> _hadHisTurn = new List<Entity>();
         
         public CombatWindow(List<Entity> players, List<Entity> npcs)
         {
 
             InitializeComponent();
-            _combatService = new CombatService();
             _players = players;
             _npcs = npcs;
         }
         
-        private void RunMainLoop(List<Entity> players, List<Entity> npcs)
+        private void RunMainLoop(List<Entity> entities)
         {
-            bool shouldRun = true;
-            int globalInitiative = 0;
-            List<Entity> entities = players;
-            entities.AddRange(npcs);
-            
-            while (shouldRun)
+            while (true)
             {
-                Thread.Sleep(100);
-                listBox1.Items.Add($"Initiative: {globalInitiative}");
+                Thread.Sleep(50);
+                listBox1.Items.Add($"Initiative: {_globalInitiative}");
+                listBox1.Refresh();
+                listBox1.TopIndex = listBox1.Items.Count - 1;
                     
                 foreach (Entity entity in entities)
                 {
-                    if (_combatService.IsTurn(entity, globalInitiative))
+                    if (IsHisTurn(entity)
+                        && !_hadHisTurn.Contains(entity))
                     {
-                        Thread.Sleep(100);
+                        Thread.Sleep(50);
                         listBox1.Items.Add($"\t{entity.Name}(Ini: {entity.Initiative}) ist am Zug");
+                        listBox1.Refresh();
+                        listBox1.TopIndex = listBox1.Items.Count - 1;
                         
-                        var turnMessageBox = new TurnMessageBox($"{entity.Name.ToUpper()}", 
-                            $"[Initiative: {globalInitiative}] {entity.Name.ToUpper()} ist am Zug");
-                        turnMessageBox.StartPosition = FormStartPosition.CenterParent;
-                        turnMessageBox.ShowDialog();
-                        if (turnMessageBox.ShouldAbort())
-                            return;
-
+                        _hadHisTurn.Add(entity);
+                        return;
 
                     }   
                 }
-            
-                globalInitiative++;
+                _hadHisTurn.Clear();
+                _globalInitiative++;
             }
         }
 
@@ -61,24 +55,34 @@ namespace Combat_Manager
         {
             FormHelper.PopulateTreeView(treeViewPlayer, _players, true);
             FormHelper.PopulateTreeView(treeViewNpcs, _npcs, true);
-
-            RunMainLoop(_players, _npcs);
         }
 
-        private void PopulateTreeView(TreeView treeView, List<Entity> entities)
+        private void buttonStartContinueCombat_Click(object sender, EventArgs e)
         {
-            foreach (Entity entity in entities)
-            {
-                var node = new TreeNode();
-                node.Name = entity.Name;
-                
-                node.Nodes.Add(new TreeNode() {Name = entity.Initiative.ToString()});
-                
-                treeView.Nodes.Add(node);
-            }
+            buttonStartContinueCombat.Visible = false;
+            List<Entity> entities = new List<Entity>(_players);
+            entities.AddRange(_npcs);
             
-            
-
+            RunMainLoop(entities);
+            buttonStartContinueCombat.Text = "weiter";
+            buttonStartContinueCombat.Visible = true;
         }
+        
+        public bool IsHisTurn(Entity entity)
+        {
+            if (entity.Initiative < _globalInitiative)
+            {
+                if (_globalInitiative % entity.Initiative == 0)
+                    return true;
+            }
+            else
+            {
+                if (entity.Initiative == _globalInitiative)
+                    return true;
+            }
+        
+            return false;
+        }
+        
     }
 }

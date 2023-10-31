@@ -58,7 +58,7 @@ namespace Combat_Manager
             this.buttonStartCombat.Name = "buttonStartCombat";
             this.buttonStartCombat.Size = new System.Drawing.Size(132, 40);
             this.buttonStartCombat.TabIndex = 2;
-            this.buttonStartCombat.Text = "Start";
+            this.buttonStartCombat.Text = "Zum Kampf";
             this.buttonStartCombat.UseVisualStyleBackColor = true;
             this.buttonStartCombat.Click += new System.EventHandler(this.buttonStartCombat_Click);
             // 

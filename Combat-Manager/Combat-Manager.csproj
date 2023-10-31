@@ -55,7 +55,6 @@
         <Compile Include="Models\Player.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Services\CombatService.cs" />
         <Compile Include="Services\NpcService.cs" />
         <Compile Include="Services\PlayerService.cs" />
         <Compile Include="TurnMessageBox.cs">
