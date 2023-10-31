@@ -17,7 +17,8 @@ namespace Combat_Manager
         {
             _npcService = new NpcService();
             InitializeComponent();
-            PopulateTreeView();
+            List<Entity> npcs = new List<Entity>(_npcService.LoadNpcsFromFile());
+            FormHelper.PopulateTreeView(treeView1,new List<Entity>(npcs),true);
         }
         
 
@@ -48,29 +49,16 @@ namespace Combat_Manager
 
             _npcService.WriteNpcsToFile(json);
             
-            PopulateTreeView();
+            FormHelper.PopulateTreeView(treeView1,new List<Entity>(npcs),true);
         }
         
-        private void PopulateTreeView()
-        {
-            var npcs = _npcService.LoadNpcsFromFile();
-
-            foreach (var npc in npcs)
-            {
-                TreeNode node = new TreeNode();
-                node.Text = npc.Name;
-                
-                node.Nodes.Add(new TreeNode($"Initiative: {npc.Initiative}"));
-                node.Nodes.Add(new TreeNode($"Parade: {npc.Parry}"));
-                node.Nodes.Add(new TreeNode($"HP: {npc.HitPoints}"));
-                node.Nodes.Add(new TreeNode($"Kommentar: {npc.Comment}"));
-                
-                treeView1.Nodes.Add(node);
-    
-            }
-            treeView1.ExpandAll();
-            
-        }
+        // private void PopulateTreeView()
+        // {
+        //     var npcs = _npcService.LoadNpcsFromFile();
+        //
+        //     
+        //     
+        // }
 
     }
 }
