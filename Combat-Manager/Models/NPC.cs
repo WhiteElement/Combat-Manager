@@ -2,6 +2,9 @@
 {
     public class NPC : Entity
     {
-        public int HitPoints { get; set; }
+        public int? Attack { get; set; }
+        public int? HitPoints { get; set; }
+        public int? Parry { get; set; }
+        public string Comment { get; set; }
     }
 }
