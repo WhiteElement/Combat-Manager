@@ -8,8 +8,9 @@ namespace Combat_Manager.Services
 {
     public class PlayerService
     {
-        private string playerFilePath = Environment.CurrentDirectory.Substring(0, 
-            Environment.CurrentDirectory.IndexOf("bin")) + "resources\\players.json";
+        // private string playerFilePath = Environment.CurrentDirectory.Substring(0, 
+        //     Environment.CurrentDirectory.IndexOf("bin")) + "resources\\players.json";
+        private string playerFilePath = "resources\\players.json";
         
         public List<Player> LoadPlayersFromFile()
         {
