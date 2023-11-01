@@ -11,6 +11,9 @@ namespace Combat_Manager.Services
         private string playerFilePath = Environment.CurrentDirectory.Substring(0, 
             Environment.CurrentDirectory.IndexOf("bin")) + "resources\\players.json";
         
+        //Production Path
+        // private string playerFilePath = "resources\\players.json";
+        
         public List<Player> LoadPlayersFromFile()
         {
             string json = File.ReadAllText(playerFilePath);

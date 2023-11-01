@@ -8,6 +8,9 @@ namespace Combat_Manager.Services
 {
     public class NpcService
     {
+        //Production Path
+        // private string npcFilePath = "resources\\npcs.json";
+        
         private string npcFilePath = Environment.CurrentDirectory.Substring(0, 
             Environment.CurrentDirectory.IndexOf("bin")) + "resources\\npcs.json";
         
